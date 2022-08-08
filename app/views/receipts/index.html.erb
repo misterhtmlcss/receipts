@@ -1,0 +1,12 @@
+<% @receipts.each do | r |%>
+  <div class="flex-col">
+    <h2><%= r.business_name %></h2>
+    <ul>
+      <li><%= r.user %></li>
+      <li><%= r.url %></li>
+      <li><%= r.upload_date %></li>
+    </ul>
+  </div>  
+<% end %>
+
+
