@@ -1,12 +1,19 @@
-<% @receipts.each do | r |%>
-  <div class="flex-col">
-    <h2><%= r.business_name %></h2>
-    <ul>
-      <li><%= r.user %></li>
-      <li><%= r.url %></li>
-      <li><%= r.upload_date %></li>
-    </ul>
-  </div>  
+
+<h1 class="font-sans text-3xl underline underline-offset-4 decoration-blue-200">Receipts</h1>
+
+<% if @receipts.empty? %>
+  <p class="font-sans text-xl">No receipts found.</p>
+<% else %>
+<div class="flex-col">
+  <% @receipts.each do | r |%>
+    <div class="flex-col p-2 my-2 border border-2 rounded shadow-sm border-sky-200">
+      <h2 id="business-name"><%= r.business_name %></h2>
+      <ul>
+        <li><%= r.user %></li>
+        <li><%= r.url %></li>
+        <li><%= r.upload_date %></li>
+      </ul>
+    </div>  
+  <% end %>
+</div>
 <% end %>
-
-
